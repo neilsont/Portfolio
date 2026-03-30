@@ -162,24 +162,18 @@ function loadProfileImage() {
     profileImg.classList.remove('image-failed');
     profileImg.classList.add('image-loaded');
     
-    // Apply the background image immediately
-    profileImg.style.backgroundImage = `url('./profile-photo.jpg?v=${Date.now()})`;
-    profileImg.style.backgroundSize = 'cover';
-    profileImg.style.backgroundPosition = 'center';
-    profileImg.style.backgroundRepeat = 'no-repeat';
+    // Apply the gradient background naturally by not overriding it
+    // The profileImg already has background: var(--gradient) in styles.css
     
     // Create an image element to test if the image actually loads
     const img = new Image();
     
     img.onload = function() {
         console.log('Profile image loaded successfully');
-        console.log('Image dimensions:', img.width, 'x', img.height);
-        // Image is already applied, just log success
     };
     
     img.onerror = function() {
-        console.log('Profile image failed to load, using fallback emoji');
-        profileImg.style.backgroundImage = 'none';
+        console.log('Profile image failed to load');
         profileImg.classList.remove('image-loaded');
         profileImg.classList.add('image-failed');
     };
