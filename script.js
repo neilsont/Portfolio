@@ -162,8 +162,12 @@ function loadProfileImage() {
     profileImg.classList.remove('image-failed');
     profileImg.classList.add('image-loaded');
     
-    // Apply the gradient background naturally by not overriding it
-    // The profileImg already has background: var(--gradient) in styles.css
+    // Apply background image with adjusted position to keep face in frame
+    profileImg.style.backgroundImage = `url('./profile-photo.jpg?v=${Date.now()}')`;
+    profileImg.style.backgroundSize = 'cover';
+    // Shift the background to the top so the top of the photo (above the face) shows
+    profileImg.style.backgroundPosition = 'center top'; 
+    profileImg.style.backgroundRepeat = 'no-repeat';
     
     // Create an image element to test if the image actually loads
     const img = new Image();
@@ -174,6 +178,7 @@ function loadProfileImage() {
     
     img.onerror = function() {
         console.log('Profile image failed to load');
+        profileImg.style.backgroundImage = 'none';
         profileImg.classList.remove('image-loaded');
         profileImg.classList.add('image-failed');
     };
