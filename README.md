@@ -224,7 +224,7 @@ Add a dark mode toggle by implementing CSS custom properties and JavaScript togg
 
 ## License
 
-Feel free to use this template for your personal portfolio. No attribution required.
+Credit: @ Serap Ogut
 
 ## Support
 
