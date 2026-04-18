@@ -83,9 +83,8 @@ const roles = [
     "AI/ML Engineer",
     "Data Scientist", 
     "Software Engineer",
-    "Machine Learning Engineer",
-    "Data Analyst",
-    "Python Developer"
+    "Researcher",
+    "Junior Developer"
 ];
 
 let currentRoleIndex = 0;
